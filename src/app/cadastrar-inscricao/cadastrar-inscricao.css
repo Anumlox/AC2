@@ -1,0 +1,22 @@
+h2 {
+  color: #0d80bf;
+}
+
+p, button, input, select {
+  font-family: Arial, sans-serif;
+}
+
+input, select {
+  padding: 5px;
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #0d80bf;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}

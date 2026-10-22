@@ -1,0 +1,42 @@
+
+.tarefa {
+  background-color: #dbeafe;
+  border: 1px solid #93c5fd;
+  padding: 15px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.contadores {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-weight: bold;
+}
+
+.concluida {
+  text-decoration: underline;
+  color: #555;
+}
+
+button {
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-right: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-concluir {
+  background-color: green;
+}
+
+.btn-remover {
+  background-color: darkorange;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

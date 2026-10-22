@@ -1,0 +1,19 @@
+<p>cadastrar-inscricao works!</p>
+<h2>Cadastrar Inscrição</h2>
+
+<p>Nome: <input [(ngModel)]="nome"></p>
+
+<p>E-mail: <input [(ngModel)]="email"></p>
+
+<p>
+  Oficina:
+  <select [(ngModel)]="oficina">
+    @for (o of servico.oficinas; track $index) {
+      <option [value]="o">{{ o }}</option>
+    }
+  </select>
+</p>
+
+<button (click)="cadastrar()">Cadastrar</button>
+
+<p><a routerLink="/lista">Ver lista</a></p>

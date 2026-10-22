@@ -1,0 +1,15 @@
+<p>injecao-dependencia-produto-catalago works!</p>
+<div >
+    <h3 >Produtos</h3>
+
+    <ul >
+        @for (p of produtos; track $index) {
+            <li >
+                <span >{{$index + 1}}</span>
+                {{ p }}
+            </li>
+        } @empty {
+            <li >Nenhum produto encontrado.</li>
+        }
+    </ul>
+</div>

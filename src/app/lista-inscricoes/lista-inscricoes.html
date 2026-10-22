@@ -1,0 +1,29 @@
+<h2>Lista de Inscrições</h2>
+
+<p>
+  Total: {{ servico.total() }} -
+  Confirmadas: {{ servico.confirmadas() }} -
+  Pendentes: {{ servico.pendentes() }}
+</p>
+
+<ul>
+  @for (inscricao of servico.listar(); track inscricao.id) {
+    <li>
+      {{ inscricao.nome }} - {{ inscricao.email }} - {{ inscricao.oficina }}
+
+      <span [class]="{'pendente': inscricao.status === 'Pendente', 'confirmada': inscricao.status === 'Confirmada'}">
+        {{ inscricao.status }}
+      </span>
+
+      <button class="confirmar" (click)="servico.confirmarInscricao(inscricao.id)" [disabled]="inscricao.status === 'Confirmada'">
+        Confirmar inscrição
+      </button>
+
+      <button class="remover" (click)="servico.remover(inscricao.id)">Remover</button>
+    </li>
+  } @empty {
+    <li>Nenhuma inscrição cadastrada</li>
+  }
+</ul>
+
+<p><a routerLink="/cadastrar">Voltar</a></p>

@@ -1,0 +1,57 @@
+h2 {
+  color: #0d80bf;
+}
+
+p, li, button {
+  font-family: Arial, sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #ffffff;
+  border: 2px solid #0d80bf;
+  border-left: 8px solid #000000;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.pendente {
+  background-color: yellow;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.confirmada {
+  background-color: green;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.confirmar {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.remover {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.confirmar:disabled {
+  background-color: gray;
+  cursor: default;
+}

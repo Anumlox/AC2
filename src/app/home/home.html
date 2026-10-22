@@ -1,0 +1,42 @@
+<p>home works!</p>
+<p>Olá, {{nome}}!</p>
+
+<p>Contador:{{contador}}</p>
+<button (click)="incrementar()">+</button>
+<button (click)="decrementar()">-</button>
+<br>
+<input [(ngModel)]="nome" placeholder="Digite seu nome">
+<p>Você digitou: {{nome}}</p>
+<br>
+<button (click)="mostrar=!mostrar">Toggle</button>
+@if(mostrar){
+    <p>Texto visivel!</p>
+}
+@else{
+    <p>Agora está escondido...</p>
+}
+<br>
+
+<ul>
+    @for (item of frutas; track $index){
+        <li>{{item}}</li>
+    }
+</ul>
+
+<br>
+
+<ul>
+    @for (item of frutas; track $index) {
+        <li (click)="Selecionada = item">{{item}}</li>
+    }
+</ul>
+
+@if (Selecionada)
+{
+    <p>Você escolheu: {{ Selecionada }}</p>
+}
+<br>
+
+<p [style]="{'color': cor}">Texto colorido!</p>
+<p [style.color]="cor">Texto colorido!</p>
+<input [(ngModel)]="cor" placeholder="Digite uma cor (ex: red)">

@@ -1,0 +1,35 @@
+<p>ex1 works!</p>
+<h1>Minha Loja</h1>
+
+<h2>Produtos</h2>
+<div class="produtos">
+  @for (produto of produtos; track produto.id) {
+    <div class="produto">
+      <h3>{{ produto.nome }}</h3>
+      <p>R$ {{ produto.preco.toFixed(2) }}</p>
+      <button (click)="adicionar(produto)">Adicionar ao carrinho</button>
+    </div>
+  }
+</div>
+
+<h2>🛒 Carrinho ({{ quantidadeTotal }} {{ quantidadeTotal === 1 ? 'item' : 'itens' }})</h2>
+
+@if (carrinho.length === 0) {
+  <p>Seu carrinho está vazio.</p>
+} @else {
+  <div class="carrinho">
+    @for (item of carrinho; track item.produto.id) {
+      <div class="item">
+        <span class="item-nome">{{ item.produto.nome }}</span>
+        <span>Qtd: {{ item.quantidade }}</span>
+        <span>R$ {{ (item.produto.preco * item.quantidade).toFixed(2) }}</span>
+        <button (click)="adicionar(item.produto)">+</button>
+        <button (click)="remover(item.produto)">-</button>
+        <button class="remover" (click)="removerTudo(item.produto)">Remover</button>
+      </div>
+    }
+  </div>
+
+  <h3>Total: R$ {{ total.toFixed(2) }}</h3>
+  <button class="limpar" (click)="limparCarrinho()">Esvaziar carrinho</button>
+}

@@ -1,0 +1,46 @@
+<p>lista-tarefas works!</p>
+
+<h2>Lista de Tarefas</h2>
+
+<div class="contadores">
+  <p>Total: {{ total }}</p>
+  <p>Concluídas: {{ concluidas }}</p>
+  <p>Pendentes: {{ pendentes }}</p>
+</div>
+
+@if (tarefas.length === 0) {
+  <p>Nenhuma tarefa cadastrada</p>
+} @else {
+  <div>
+    @for (tarefa of tarefas; track tarefa.id) {
+      <div class="tarefa">
+        <h3 [class.concluida]="tarefa.concluida">
+          {{ tarefa.titulo }}
+        </h3>
+
+        <p [class.concluida]="tarefa.concluida">
+          {{ tarefa.descricao }}
+        </p>
+
+        <p>Prazo: {{ tarefa.prazo || 'Não definido' }}</p>
+
+        <button
+          class="btn-concluir"
+          (click)="concluir(tarefa.id)"
+          [disabled]="tarefa.concluida">
+          Concluir
+        </button>
+
+        <button
+          class="btn-remover"
+          (click)="remover(tarefa.id)">
+          Remover
+        </button>
+      </div>
+    }
+  </div>
+}
+
+<br>
+
+<a routerLink="/cadastro">Voltar ao cadastro</a>
